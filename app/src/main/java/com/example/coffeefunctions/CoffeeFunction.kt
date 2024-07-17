@@ -1,10 +1,22 @@
 package com.example.coffeefunctions
 
 fun main(){
-    var myResult = add(num1 = 1, num2 = 2)
+
+    println("Inserisci un numero")
+    val num1St= readln()
+    val num1= num1St.toInt()
+    println("Inserisci un numero")
+    val num2St= readln()
+    val num2= num2St.toInt()
+    var myResult = divide(num1,num2)
     println("Il risultato della somma è: $myResult")
 
     askDetails()
+}
+
+fun divide(num1: Int, num2: Int): Double {
+    val result = num1 / num2.toDouble()
+    return result
 }
 
 fun add(num1: Int, num2: Int): Int {
