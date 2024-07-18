@@ -1,7 +1,24 @@
 package com.example.coffeefunctions
 
 fun main(){
+    //Istanza/Oggetto di calsse Dog che viene subito eseguito
+    var myDog = Dog(name = "Daisy", breed = "Pechinese", age=10)
+    //askDetails()
+    println("la sua razza è ${myDog.breed} e ha ${myDog.age} anni")
+}
 
+fun askDetails() {
+    println("Per chi è?")
+    val name = readln()
+    println("Quanto zucchero?")
+    val sugarStr = readln()
+    val sugar = sugarStr.toInt()
+    // Chiamate
+    makeCoffee(sugarCount = sugar, name = name)
+    println("Lavoro due ore")
+}
+
+fun operations(){
     println("Inserisci un numero")
     val num1St= readln()
     val num1= num1St.toInt()
@@ -10,8 +27,6 @@ fun main(){
     val num2= num2St.toInt()
     var myResult = divide(num1,num2)
     println("Il risultato della somma è: $myResult")
-
-    askDetails()
 }
 
 fun divide(num1: Int, num2: Int): Double {
@@ -35,13 +50,4 @@ fun makeCoffee(sugarCount: Int, name: String) {
     println("Mescola le due cose")
 }
 
-fun askDetails() {
-    println("Per chi è?")
-    val name = readln()
-    println("Quanto zucchero?")
-    val sugarStr = readln()
-    val sugar = sugarStr.toInt()
-    // Chiamate
-    makeCoffee(sugarCount = sugar, name = name)
-    println("Lavoro due ore")
-}
+
