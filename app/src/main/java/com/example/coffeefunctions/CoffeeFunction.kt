@@ -1,13 +1,19 @@
 package com.example.coffeefunctions
 
+//DataClass
+data class CoffeeDetails(
+    val sugarCount:Int,
+    val name:String,
+    val size:String,
+    val creamAmount:Int
+)
 fun main(){
-    //Istanza/Oggetto di calsse Dog che viene subito eseguito
-    var myDog = Dog(name = "Daisy", breed = "Pechinese", age=10)
-    //askDetails()
-    println("la sua razza è ${myDog.breed} e ha ${myDog.age} anni")
+val myCoffee = CoffeeDetails(sugarCount = 3, name = "Giacomo", size = "XL", creamAmount = 3)
+makeCoffee(myCoffee)
 }
 
-fun askDetails() {
+
+/*fun askDetails() {
     println("Per chi è?")
     val name = readln()
     println("Quanto zucchero?")
@@ -16,7 +22,7 @@ fun askDetails() {
     // Chiamate
     makeCoffee(sugarCount = sugar, name = name)
     println("Lavoro due ore")
-}
+}*/
 
 fun operations(){
     println("Inserisci un numero")
@@ -40,14 +46,20 @@ fun add(num1: Int, num2: Int): Int {
 }
 
 // Dichiarazione
-fun makeCoffee(sugarCount: Int, name: String) {
-    if (sugarCount == 1) {
-        println("Ecco il caffè con $sugarCount zucchero per $name")
+fun makeCoffee(coffeeDetails: CoffeeDetails) {
+    if (coffeeDetails.sugarCount == 1) {
+        println("Ecco il caffè con ${coffeeDetails.sugarCount} zucchero per ${coffeeDetails.name} di dimensione ${coffeeDetails.size}")
     } else {
-        println("Ecco il caffè con $sugarCount zuccheri per $name")
+        println("Ecco il caffè con ${coffeeDetails.sugarCount} zuccheri per ${coffeeDetails.name}  di dimensione ${coffeeDetails.size}")
     }
-    println("Ecco l'acqua")
-    println("Mescola le due cose")
+
 }
 
-
+fun createDog(){
+    //Istanza/Oggetto di calsse Dog che viene subito eseguito
+    var myDog = Dog(name = "Daisy", breed = "Pechinese", age=10)
+    //askDetails()
+    println("la sua razza è ${myDog.breed} e ha ${myDog.age} anni")
+    myDog.age= 2
+    println("la sua razza è ${myDog.breed} e ha ${myDog.age} anni")
+}
